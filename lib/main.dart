@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:ramas_git/presentation/app_router.dart';
+
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+void main() {
+  runApp(const ProviderScope(child: MainApp()));
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      routerConfig: appRouter,
+      title: 'Ramas Git',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+    );
+  }
+}
